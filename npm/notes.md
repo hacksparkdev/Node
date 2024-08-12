@@ -10,3 +10,10 @@
 ```
 const color = require('colors');
 ```
+
+### Global VS local packages
+
+Installing globally means you can use it outside of the current directory.
+```
+npm i -g cowsay
+```
