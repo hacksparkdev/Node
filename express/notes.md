@@ -88,5 +88,12 @@ app.get('/', (req, res) => {
   res.send('HOME')
 })
 
+// Responds to any path that is not being used
+app.get('*', (req, res) => {
+    res.send("Page not found")
+})
+
 ```
+
+### Path Parameter
 
