@@ -64,3 +64,29 @@ In this context, the anonymous function `(req, res) => { ... }` is a **callback 
 ### Summary
 
 The code you provided sets up a basic Express.js middleware that listens for all incoming HTTP requests to the server. It responds with a plain text message, `"This is a http response"`, regardless of the request's URL or HTTP method.
+
+
+### Send html through res.send
+```
+app.use((req, res) => { 
+  // This Creates texts on the screen
+  res.send('<h1> This is comming from res.send </h1>')
+})
+
+```
+
+### Routing 
+
+```
+// This is the a route to localhost:8000/cats
+app.get('/cats', (req, res) => {
+    res.send("BITCH")
+})
+
+// This is the homee route localhost:8000 
+app.get('/', (req, res) => {
+  res.send('HOME')
+})
+
+```
+
