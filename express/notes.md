@@ -97,3 +97,8 @@ app.get('*', (req, res) => {
 
 ### Path Parameter
 
+```
+app.get('/r/:subreddit', (req, res) => {
+    res.send("This is a subreddit")
+})
+```
