@@ -7,7 +7,7 @@ npm i ejs
 ```
 
 
-### Configuration
+## Configuration
 
 ```
 //This will be used to se the path for views
@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, '/views'))
 
 You will need a "Views" file to store ejs files to render them.
 
-### Rendering ejs 
+## Rendering ejs 
 
 ```
 app.get('/', (req, res) => {
@@ -49,4 +49,13 @@ app.get('/', (req, res) => {
 
 ```
 
+
+### Passing through variables
+
+```
+app.get('/random', (req, res) => {
+    const num = Math.floor(Math.random() * 10);
+    res.render('random', {rand: num})
+})
+```
 
