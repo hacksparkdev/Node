@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path')
+const redditData = require('./data.json')
 
 
 app.set('view engine', 'ejs')
@@ -17,7 +18,13 @@ app.get('/random', (req, res) => {
 
 app.get('/r/:subreddit', (req, res) => {
   const {subreddit} = req.params
-  res.render('subreddit', { subreddit })
+  const data = redditData[subreddit];
+  res.render('subreddit', { ...data })
+})
+
+app.get('/cats', (req, res) => {
+  const cats = ['fat whore', 'simon', 'sam', 'dean']
+  res.render('cats', {cats})
 })
 
 app.listen(3000, () => {

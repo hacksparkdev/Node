@@ -61,6 +61,8 @@ app.get('/random', (req, res) => {
 
 ## Conditionals
 
+
+### IF Statements
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -79,4 +81,42 @@ app.get('/random', (req, res) => {
 </html>
 
 ```
+
+### Looping
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All the cats</h1>
+    <% for(let cat of cats) { %>
+        <li><%= cat %></li>
+        <%}%>
+</body>
+</html>
+
+```
+
+### Route for loop 
+```
+app.get('/cats', (req, resp) => {
+const cats = ['fat whore', 'Simmon', "Dean", 'Sam']
+res.render('cats', {cats})
+})
+```
+
+
+
+
+
+
+
+
+
+
+
 
