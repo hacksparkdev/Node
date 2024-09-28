@@ -57,7 +57,7 @@ async function searchDocuments () {
   }
 }
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   const result = await client.search ({
     index: 'notes',
     query: {
