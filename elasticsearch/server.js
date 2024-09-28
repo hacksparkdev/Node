@@ -57,7 +57,11 @@ async function searchDocuments () {
   }
 }
 
-searchDocuments();
+const document = await client.get({
+  index: 'notes'
+})
+console.log(document)
+
 
 app.listen(3000, () => {
   console.log('Running on port 3000')
