@@ -57,10 +57,7 @@ async function searchDocuments () {
   }
 }
 
-const document = await client.get({
-  index: 'notes'
-})
-console.log(document)
+
 
 
 app.listen(3000, () => {
