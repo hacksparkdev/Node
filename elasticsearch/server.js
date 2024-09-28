@@ -61,7 +61,7 @@ app.get('/', async (req, res) => {
   const result = await client.search ({
     index: 'notes',
     query: {
-      match: match_all: {}
+       match_all: {}
     }
   });
    
