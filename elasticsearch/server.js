@@ -65,7 +65,7 @@ app.get('/', async (req, res) => {
     }
   });
    
-  res.render('home', results: result.hits.hits);
+  res.render('home', {results: result.hits.hits});
 })
 
 
