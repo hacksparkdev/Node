@@ -8,7 +8,7 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-app.set('view', path.join(__dirname, '/views'))
+app.set('views', path.join(__dirname, '/views'))
 
 
 const client = new Client({
