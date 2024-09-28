@@ -57,6 +57,17 @@ async function searchDocuments () {
   }
 }
 
+app.get('/', (req, res) => {
+  const result = await client.search ({
+    index: 'notes',
+    query: {
+      match: match_all: {}
+    }
+  });
+   
+  res.render('home', result.hits.hits);
+})
+
 
 
 
