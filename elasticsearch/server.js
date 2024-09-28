@@ -65,7 +65,7 @@ app.get('/', (req, res) => {
     }
   });
    
-  res.render('home', result.hits.hits);
+  res.render('home', results: result.hits.hits);
 })
 
 
