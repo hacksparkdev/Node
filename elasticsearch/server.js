@@ -25,6 +25,7 @@ async function checkClusterHealth (){
   }
 }
 
+// Indexing Documents
 async function indexDocument () {
   try {
     const response = await client.index ({
@@ -41,7 +42,22 @@ async function indexDocument () {
   }
 }
 
-indexDocument();
+// Searching Documents
+async function searchDocuments () {
+  try {
+    const result = await client.search ({
+      index: 'notes',
+      query: {
+        match: {tags: 'nodejs'},
+      },
+    });
+    console.log('Search result:', result.hits.hits);
+  } catch (err){
+    console.error('Error searching documents: ', err)
+  }
+}
+
+searchDocuments();
 
 app.listen(3000, () => {
   console.log('Running on port 3000')
