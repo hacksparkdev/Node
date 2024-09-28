@@ -25,8 +25,23 @@ async function checkClusterHealth (){
   }
 }
 
-checkClusterHealth();
+async function indexDocument () {
+  try {
+    const response = await client.index ({
+      index: 'notes',
+      document: {
+        title: 'Elasticsearch in Node.js',
+        content: 'Learning how to use Elasticsearch with Node.js',
+        tags: ['nodejs', 'elasticsearch', 'search'],
+      },
+    });
+    console.log('Document indexed:', response);
+  } catch (err) {
+    console.error('Error Indexing document:', err);
+  }
+}
 
+indexDocument();
 
 app.listen(3000, () => {
   console.log('Running on port 3000')
